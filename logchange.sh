@@ -2,6 +2,14 @@
 
 filePath=${CHANGELOG_DIR}/changelog.txt
 
+usage="$(basename "$0") [[-h|--help]|[--oops|--undo]|[ --show|--list]|--open] -- a simple interactive bash script to assist with recording information about major changes made to your system.
+
+where:
+    -h|--help  show this help text
+    --oops|--undo  removes the last line added to the changelog after a confirmation prompt
+    --show|--list  output the contents of the changelog file using the cat utility
+    --open  open the changelog file in the kate text editor"
+
 touch "$filePath"
 
 removeLastLine() {
@@ -30,6 +38,17 @@ case $i in
     *)
             # unknown option
     ;;
+    h|--help) echo "$usage"
+       exit
+       ;;
+    :) printf "missing argument for -%s\n" "$OPTARG" >&2
+       echo "$usage" >&2
+       exit 1
+       ;;
+   \?) printf "illegal option: -%s\n" "$OPTARG" >&2
+       echo "$usage" >&2
+       exit 1
+       ;;
 esac
 done
 
