@@ -9,7 +9,7 @@ Once activated, the script will interactively ask you a series of simple questio
 
 | Question      | Expected Input | Purpose |
 | ----------- | ----------- | ----------- |
-| Is this a [s]ystem change or a [U]ser change? | `[sS|Uu]` or `enter` to accept the default of `U` | This records whether this change is user-level (i.e. home-folder configs) or system level (i.1. /etc/ configs, sudo apt install, etc.) |
+| Is this a [s]ystem change or a [U]ser change? | `s`, `u` or `enter` to accept the default of `U` (case insensitive) | This records whether this change is user-level (i.e. home-folder configs) or system level (i.1. /etc/ configs, sudo apt install, etc.) |
 | What piece of software does this change affect? (i.e. Firefox) | Free Response, defaults to the empty string | Provides a place to record whether this affects a particular piece of software |
 | What/Where/Why? | Free Response, defaults to the empty string | provides a place to explain the problem being solved and include potential keywords for later searching |
 | Is there a link to go with this change? | Free Response, defaults to the empty string | Provides a place to include a link to stackoverflow or any site to record where you found the solution to the problem in case its needed later |
